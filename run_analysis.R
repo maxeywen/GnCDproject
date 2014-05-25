@@ -39,7 +39,7 @@ names(S) <- "subject"
 tidyData <- cbind(S, Y, X)
 
 ## write output to cleandata.csv
-write.csv(tidyData, "./output/tidydata.csv")
+write.csv(tidyData, "./output/tidydata.txt", row.names=FALSE)
 
 uniqueSubjects = unique(S)[,1]
 numSubjects = length(unique(S)[,1])
@@ -57,4 +57,4 @@ for (s in 1:numSubjects) {
     row = row+1
   }
 }
-write.csv(result, "./output/tidyDataGrouped.csv")
+write.csv(result, "./output/tidyDataGrouped.txt", row.names=FALSE)
