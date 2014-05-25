@@ -52,12 +52,12 @@ feature names found in tidyData output and the original feature name from test a
 * [13] "timegravityaccelerometerstandarddeviationy" <= tGravityAcc-std()-Y                 
 * [14] "timegravityaccelerometerstandarddeviationz" <= tGravityAcc-std()-Z                 
 
-### Time Domain Body Accelerometer Signal Signal Mean in Coordinates X, Y, Z
+### Time Domain Body Accelerometer Jerk Signal Signal Mean in Coordinates X, Y, Z
 * [15] "timebodyaccelerometerjerkmeanx" <= tBodyAccJerk-mean()-X                             
 * [16] "timebodyaccelerometerjerkmeany" <= tBodyAccJerk-mean()-Y                             
 * [17] "timebodyaccelerometerjerkmeanz" <= tBodyAccJerk-mean()-Z                             
 
-### Time Domain Body Accelerometer Signal Signal Standard Deviation in Coordinates X, Y, Z
+### Time Domain Body Accelerometer Jerk Signal Signal Standard Deviation in Coordinates X, Y, Z
 * [18] "timebodyaccelerometerjerkstandarddeviationx" <= tBodyAccJerk-std()-X                
 * [19] "timebodyaccelerometerjerkstandarddeviationy" <= tBodyAccJerk-std()-Y                
 * [20] "timebodyaccelerometerjerkstandarddeviationz" <= tBodyAccJerk-std()-Z                
@@ -72,12 +72,12 @@ feature names found in tidyData output and the original feature name from test a
 * [25] "timebodygyroscopestandarddeviationy" <= tBodyGyro-std()-Y                        
 * [26] "timebodygyroscopestandarddeviationz" <= tBodyGyro-std()-Z                        
 
-### Time Domain Body Gyroscope Signal Signal Mean in Coordinates X, Y, Z
+### Time Domain Body Gyroscope Jerk Signal Signal Mean in Coordinates X, Y, Z
 * [27] "timebodygyroscopejerkmeanx" <= tBodyGyroJerk-mean()-X                                 
 * [28] "timebodygyroscopejerkmeany" <= tBodyGyroJerk-mean()-Y                                 
 * [29] "timebodygyroscopejerkmeanz" <= tBodyGyroJerk-mean()-Z                                 
 
-### Time Domain Body Gyroscope Signal Signal Standard Deviation in Coordinates X, Y, Z
+### Time Domain Body Gyroscope Jerk Signal Standard Deviation in Coordinates X, Y, Z
 * [30] "timebodygyroscopejerkstandarddeviationx" <= tBodyGyroJerk-std()-X                    
 * [31] "timebodygyroscopejerkstandarddeviationy" <= tBodyGyroJerk-std()-Y                    
 * [32] "timebodygyroscopejerkstandarddeviationz" <= tBodyGyroJerk-std()-Z                    
@@ -136,7 +136,7 @@ feature names found in tidyData output and the original feature name from test a
 * [61] "frequencybodyaccelerometermagnitudemean" <= fBodyAccMag-mean()                    
 * [62] "frequencybodyaccelerometermagnitudestandarddeviation" <= fBodyAccMag-std()       
 
-### Frequency Domain Body Body Accelerometer Signal Magnitude Mean & Standard Deviation
+### Frequency Domain Body Body Accelerometer Jerk Signal Magnitude Mean & Standard Deviation
 * [63] "frequencybodybodyaccelerometerjerkmagnitudemean" <= fBodyBodyAccJerkMag-mean()            
 * [64] "frequencybodybodyaccelerometerjerkmagnitudestandarddeviation" <= fBodyBodyAccJerkMag-std()
 
