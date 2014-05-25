@@ -28,6 +28,8 @@ X <- X[, keepFeatures]
 ## rename cols in X by removing -,(, and )
 names(X) <- features[keepFeatures, 2]
 names(X) <- tolower(gsub("-|\\(|\\)", "", names(X)))
+
+## expand column names to more meaningful names
 names(X) <- gsub("^t", "time", names(X))
 names(X) <- gsub("^f", "frequency", names(X))
 names(X) <- gsub("gyro", "gyroscope", names(X))
@@ -40,28 +42,24 @@ activities <- read.table("./UCI HAR Dataset/activity_labels.txt")
 activities[, 2] = tolower(gsub("_", "", as.character(activities[, 2])))
 Y[,1] = activities[Y[,1], 2]
 
-## name these data and  bind all data together
+## name these data, bind all data together, and order
 names(Y) <- "activity"
 names(S) <- "subject"
 tidyData <- cbind(S, Y, X)
+tidyData <- tidyData[order(tidyData$subject),]
 
-## write output to cleandata.csv
+## write output to tidydata.txt
 write.csv(tidyData, "./output/tidydata.txt", row.names=FALSE)
 
-uniqueSubjects = unique(S)[,1]
-numSubjects = length(unique(S)[,1])
-numActivities = length(activities[,1])
-numCols = dim(tidyData)[2]
-result = tidyData[1:(numSubjects*numActivities), ]
+## convert to data table
+library(data.table)
+dt<- data.table(tidyData)
 
-row = 1
-for (s in 1:numSubjects) {
-  for (a in 1:numActivities) {
-    result[row, 1] = uniqueSubjects[s]
-    result[row, 2] = activities[a, 2]
-    tmp <- tidyData[tidyData$subject==s & tidyData$activity==activities[a, 2], ]
-    result[row, 3:numCols] <- colMeans(tmp[, 3:numCols])
-    row = row+1
-  }
-}
+## group by subject & activity, apply mean, write to result
+result <- dt[, lapply(.SD, mean), by=c("subject", "activity")]
+
+## order result
+result <- result[order(result$subject),]
+
+## write output
 write.csv(result, "./output/tidyDataGrouped.txt", row.names=FALSE)
