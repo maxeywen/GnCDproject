@@ -25,8 +25,8 @@ When the script run_analysis.R is run it will do the following
 - Extracts only the measurements on the mean and standard deviation for each measurement. 
 - Replaces the activity codes in the dataset with decriptive names from <project>/UCI HAR Dataset
 - Expands dataset feature names
-- writes this cleaned up dataset to <project>/output/tidydata.csv 
-- Creates a second, independent tidy data set with the average of each variable for each activity and each subject and writes it to <project>/output/tidyDataGrouped.csv 
+- writes this cleaned up dataset to <project>/output/tidydata.txt 
+- Creates a second, independent tidy data set with the average of each variable for each activity and each subject and writes it to <project>/output/tidyDataGrouped.txt 
 
 ### Code Book
 Will describe names of features
