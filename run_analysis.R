@@ -1,3 +1,10 @@
+## download the raw source data and unzip
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "data.zip", method="curl")
+unzip("./data.zip")
+
+## create output directory
+dir.create("./output")
+
 ## row bind X/subject/activity tables individually
 train <- read.table("./UCI HAR Dataset/train/X_train.txt")
 test <- read.table("./UCI HAR Dataset/test/X_test.txt")
